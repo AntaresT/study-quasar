@@ -23,6 +23,16 @@ import { ref } from 'vue'
 
 export default {
 
+  data () {
+    return {
+      fields: {
+        name: '',
+        age: '',
+        creationDate: ''
+      }
+    }
+  },
+
   computed: {
     checkRoute () {
       console.log(this.$route)
