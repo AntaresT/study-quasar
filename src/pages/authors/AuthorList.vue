@@ -21,6 +21,10 @@
 export default {
   name: 'AuthorList',
 
+  data () {
+
+  },
+
   computed: {
     columns () {
       return [
@@ -33,6 +37,7 @@ export default {
           format: val => `${val}`,
           sortable: true
         },
+        { name: 'age', align: 'left', label: 'Idade', field: 'age', sortable: true },
         { name: 'creationDate', align: 'left', label: 'Data de Criação', field: 'creationDate', sortable: true }
       ]
     },
@@ -42,11 +47,13 @@ export default {
         {
           title: 'titulo',
           name: 'nome X',
+          age: 43,
           creationDate: '2021-10-14'
         },
         {
           title: 'titulo2',
           name: 'fasldla',
+          age: 60,
           creationDate: '2021-10-14'
         }
       ]
