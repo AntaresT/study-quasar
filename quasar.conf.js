@@ -137,8 +137,8 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: 'Quasar App',
-        short_name: 'Quasar App',
+        name: 'BloguiSipoti',
+        short_name: 'BloguiSipoti',
         description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
