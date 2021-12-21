@@ -1,25 +1,21 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+      <q-toolbar class="text-white q-pl-md q-pr-md" style="background-color: #f39c12">
         <q-toolbar-title>
-          Quasar App
+          BlogSpot
         </q-toolbar-title>
-        <div>Quasar v{{ $q.version }}</div>
+        <q-list class="row">
+          <q-item-label header />
+          <q-item v-for="(item, index) in allLinks" :key="index" >
+            <q-item-section>
+              <!--<q-item-label  class="text-black">{{item.title}}</q-item-label>-->
+              <q-btn :label="item.title" push :ripple="{color: 'purple'}" :to="{name: item.name}" />
+            </q-item-section>
+          </q-item>
+        </q-list>
       </q-toolbar>
     </q-header>
-
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header />
-        <q-item v-for="(item, index) in allLinks" :key="index" :to="{name: item.name}" >
-          <q-item-section>
-            <q-item-label>{{item.title}}</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -40,7 +36,7 @@ const linksList = [
   }
 ]
 
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
@@ -48,17 +44,6 @@ export default defineComponent({
   computed: {
     allLinks () {
       return linksList
-    }
-  },
-
-  setup () {
-    const leftDrawerOpen = ref(false)
-
-    return {
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
     }
   }
 })

@@ -1,60 +1,96 @@
 <template>
-  <q-page>
-    <div class="q-pa-md">
-      <q-btn :to="{ name: 'PostCreate' , params: { mode:'new' }}" label="Novo Post" />
+  <q-page class="flex justify-center">
+    <div class="full-width q-pa-md text-right">
+      <q-btn label="Novo Post" :to="{ name:'PostCreate', params:{ mode:'new' } }"/>
     </div>
-    <div class="q-pa-md q-gutter-md">
-      <div v-for="(post,index) in posts" :key="index">
-        <q-card class="my-card" flat bordered>
-          <q-card-section horizontal>
-            <q-card-section class="q-pt-xs">
-              <div class="text-overline">Overline</div>
-              <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
-              <div class="text-caption text-grey">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </div>
-            </q-card-section>
-
-            <q-card-section class="col-5 flex flex-center">
-              <q-img
-                class="rounded-borders"
-                src="https://cdn.quasar.dev/img/parallax2.jpg"
-              />
-            </q-card-section>
-          </q-card-section>
-
-          <q-separator />
-
-          <q-card-actions>
-            <q-btn flat round icon="event" />
-            <q-btn flat>
-              7:30PM
-            </q-btn>
-            <q-btn flat color="primary">
-              Reserve
-            </q-btn>
-          </q-card-actions>
-        </q-card>
-      </div>
+    <div class="q-pa-md q-gutter-lg flex content-center postList__screenLimit">
+      <post-item :posts="posts"/>
     </div>
   </q-page>
 </template>
 
 <script>
+import PostItem from '../../components/PostItem'
+
 export default {
+  components: {
+    PostItem
+  },
+
   data () {
     return {
       posts: [
-        { title: 'Titulo 1', author: 'author 1', content: 'laraarara' },
-        { title: 'Titulo 2', author: 'author 2', content: 'laraarara' }
+        {
+          id: 1,
+          img: 'https://picsum.photos/200/200?random=1',
+          title: 'Titulo 1',
+          category: 'teste',
+          description: 'lorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem iasdlorem iupsoiasdlorem iasdlorem iupsoiasdlorem',
+          author: 'author 1',
+          content: 'laraarara',
+          created: '2020-11-29'
+        },
+        {
+          id: 2,
+          img: 'https://picsum.photos/200/200?random=2',
+          title: 'Titulo 2',
+          category: 'teste',
+          description: 'lorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem iasdlorem iupsoiasdlorem iasdlorem iupsoiasdlorem',
+          author: 'author 2',
+          content: 'laraarara',
+          created: '2020-11-29'
+        },
+        {
+          id: 3,
+          img: 'https://picsum.photos/200/200?random=3',
+          title: 'Titulo 3',
+          category: 'teste',
+          description: 'lorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem',
+          author: 'author 3',
+          content: 'laraarara',
+          created: '2020-11-29'
+        },
+        {
+          id: 4,
+          img: 'https://picsum.photos/200/200?random=4',
+          title: 'Titulo 4',
+          category: 'teste',
+          description: 'lorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem',
+          author: 'author 4',
+          content: 'laraarara',
+          created: '2020-11-29'
+        },
+        {
+          id: 5,
+          img: 'https://picsum.photos/200/200?random=5',
+          title: 'Titulo 5',
+          category: 'teste',
+          description: 'lorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem',
+          author: 'author 5',
+          content: 'laraarara',
+          created: '2020-11-29'
+        },
+        {
+          id: 6,
+          img: 'https://picsum.photos/200/200?random=6',
+          title: 'Titulo 6',
+          category: 'teste',
+          description: 'lorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem iupsoiasdlorem',
+          author: 'author 6',
+          content: 'laraarara',
+          created: '2020-11-29'
+        }
       ]
     }
   }
 }
 </script>
 
-<style lang="sass" scoped>
-.my-card
-  width: 100%
-  max-width: 250px
+<style lang="scss">
+.postList {
+
+  &__screenLimit {
+    width: 800px;
+  }
+}
 </style>
