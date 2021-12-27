@@ -11,10 +11,10 @@
           <q-input filled v-model="post.description" label="Description" lazy-rules :rules="fieldRules" />
           <q-input filled v-model="post.author" label="Author" lazy-rules :rules="fieldRules" />
           <q-input filled type="textarea" v-model="post.content" label="Content" lazy-rules :rules="fieldRules"/>
-          <q-uploader url="http://localhost:4444/upload" color="blue" label="Image" flat bordered style="max-width: 300px" />
-          <div>
-            <q-btn label="Submit" type="submit" color="primary"/>
-            <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+          <q-uploader url="http://localhost:4444/upload" color="warning" label="Image" flat bordered style="max-width: 300px" />
+          <div class="text-right">
+            <q-btn label="Cancelar" type="reset" color="warning" flat class="q-ml-sm" />
+            <q-btn label="Enviar" type="submit" color="warning"/>
           </div>
         </q-form>
       </div>
