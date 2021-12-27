@@ -1,17 +1,19 @@
 <template>
-  <q-page>
-    <div class="q-pa-md text-h3">
-      Autores
-    </div>
-    <div class="q-pa-md" style="max-width: 400px">
-      <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md" >
-        <q-input filled v-model="name" label="Name" lazy-rules :rules="nameRules" />
-        <q-input filled type="number" v-model="age" label="Age" lazy-rules :rules="ageRules"/>
-        <div>
-          <q-btn label="Submit" type="submit" color="primary"/>
-          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-        </div>
-      </q-form>
+  <q-page class="flex justify-center">
+    <div class="">
+      <div class="q-pa-md text-h3">
+        Novo Autor
+      </div>
+      <div class="q-pa-md">
+        <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md" >
+          <q-input filled v-model="name" label="Nome" lazy-rules :rules="nameRules" />
+          <q-input filled type="number" v-model="age" label="Idade" lazy-rules :rules="ageRules"/>
+          <div class="text-right">
+            <q-btn label="Cancelar" type="reset" color="warning" flat class="q-ml-sm" />
+            <q-btn label="Enviar" type="submit" color="warning"/>
+          </div>
+        </q-form>
+      </div>
     </div>
   </q-page>
 </template>
